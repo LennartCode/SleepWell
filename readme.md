@@ -60,10 +60,18 @@ This program only runs on a Windows 7 machine or higher. Other operating systems
         <Actions Context="Author">
             <Exec>
             <Command>C:\Skripte\SleepWell\SleepWell.exe</Command>
+            <WorkingDirectory>C:\Skripte\SleepWell\</WorkingDirectory>
             </Exec>
         </Actions>
-    </Task>
+        </Task>
     ```
+
+## Notes and troubleshooting
+
+- The logs are stored in the folder `%TEMP%` (just paste that into the start menu) and are called `SleepWell_Log_<Time of execution>`.
+- If the `Applause.wav` file is missing, make sure you executed step 2 of the setup properly. Also make sure that the execution path of the scheduled task is set to the folder you copied the executable to.
+- If the task is not executed at all but you can run the executable by double clicking it, make sure that the user account that executes the task has the permissions `Logon as a Batch Job` and `Logon as a Service`. This is in most instances already the case if the user has administrator permissions.
+- If you want to, you can replace the sound that is played. It must however be a `.wav` file, called `Applause.wav` and be located in the same position as the original file.
 
 ## Credit
 
